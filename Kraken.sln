@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.vcxproj", "{EA1B20D7-FFF9-4E82-902C-E5E6851698D0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kraken", "Kraken\Kraken.vcxproj", "{769A33CC-6832-4E00-B005-AF2BA7B3C0C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{769A33CC-6832-4E00-B005-AF2BA7B3C0C5}.Debug|x64.ActiveCfg = Debug|x64
+		{769A33CC-6832-4E00-B005-AF2BA7B3C0C5}.Debug|x64.Build.0 = Debug|x64
+		{769A33CC-6832-4E00-B005-AF2BA7B3C0C5}.Release|x64.ActiveCfg = Release|x64
+		{769A33CC-6832-4E00-B005-AF2BA7B3C0C5}.Release|x64.Build.0 = Release|x64
+		{EA1B20D7-FFF9-4E82-902C-E5E6851698D0}.Debug|x64.ActiveCfg = Debug|x64
+		{EA1B20D7-FFF9-4E82-902C-E5E6851698D0}.Debug|x64.Build.0 = Debug|x64
+		{EA1B20D7-FFF9-4E82-902C-E5E6851698D0}.Release|x64.ActiveCfg = Release|x64
+		{EA1B20D7-FFF9-4E82-902C-E5E6851698D0}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE82869B-E979-48DB-AC55-88F5CA35D916}
+	EndGlobalSection
+EndGlobal
