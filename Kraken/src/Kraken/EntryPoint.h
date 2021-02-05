@@ -6,6 +6,10 @@
 extern Kraken::Application* Kraken::CreateApplication();
 
 int main(int argc, char** argv) {
+	Kraken::Log::Init();
+	KR_CORE_WARN("Hello Core!");
+	KR_INFO("Hello Client!");
+	
 	auto app = Kraken::CreateApplication();
 	app->Run();
 	delete app;
