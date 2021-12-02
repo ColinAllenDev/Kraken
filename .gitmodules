@@ -1,0 +1,3 @@
+[submodule "Kraken/vendor/spdlog"]
+    path = Kraken/vendor/spdlog
+    url = https://github.com/gabime/spdlog

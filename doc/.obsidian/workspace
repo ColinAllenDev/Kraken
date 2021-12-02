@@ -1,0 +1,109 @@
+{
+  "main": {
+    "id": "e1d1860de34a7e78",
+    "type": "split",
+    "children": [
+      {
+        "id": "e2742d780e8821bf",
+        "type": "leaf",
+        "dimension": 35.596248325145154,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "EventSystem.md",
+            "mode": "source"
+          }
+        }
+      },
+      {
+        "id": "70529fcaeadd5cd6",
+        "type": "leaf",
+        "dimension": 64.40375167485485,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "EventSystem.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5d1f02aa41652de4",
+    "type": "split",
+    "children": [
+      {
+        "id": "b09301aa7bd35e7a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f0da6a757a34e9ed",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "3947fd3766d3e6ac",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 261
+  },
+  "right": {
+    "id": "da6e6b13011cb5fe",
+    "type": "split",
+    "children": [
+      {
+        "id": "b2c4afec92f07b71",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1f59cc6475db63bf",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "EventSystem.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "e2742d780e8821bf",
+  "lastOpenFiles": [
+    "EventSystem.md",
+    "Application.h.md",
+    "Log.h.md",
+    "EntryPoint.h.md"
+  ]
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Kraken">
+      <UniqueIdentifier>{C1DA17BF-AD7C-4295-9637-56E98278C9E5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kraken\Events">
+      <UniqueIdentifier>{85C395F7-F183-112E-BABE-5AAB263E560A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Kraken.h" />
+    <ClInclude Include="src\Kraken\Application.h">
+      <Filter>Kraken</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Core.h">
+      <Filter>Kraken</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\EntryPoint.h">
+      <Filter>Kraken</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Events\ApplicationEvent.h">
+      <Filter>Kraken\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Events\Event.h">
+      <Filter>Kraken\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Events\KeyEvent.h">
+      <Filter>Kraken\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Events\MouseEvent.h">
+      <Filter>Kraken\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Events\WindowEvent.h">
+      <Filter>Kraken\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Log.h">
+      <Filter>Kraken</Filter>
+    </ClInclude>
+    <ClInclude Include="src\krpch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Kraken\Application.cpp">
+      <Filter>Kraken</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Kraken\Log.cpp">
+      <Filter>Kraken</Filter>
+    </ClCompile>
+    <ClCompile Include="src\krpch.cpp" />
+  </ItemGroup>
+</Project>
