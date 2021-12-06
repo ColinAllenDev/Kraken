@@ -4,20 +4,32 @@
     <Filter Include="Kraken">
       <UniqueIdentifier>{C1DA17BF-AD7C-4295-9637-56E98278C9E5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Kraken\Core">
+      <UniqueIdentifier>{B9DFBC0F-2595-3505-AE89-2FDC1A3E2C09}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Kraken\Events">
       <UniqueIdentifier>{85C395F7-F183-112E-BABE-5AAB263E560A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kraken\Platform">
+      <UniqueIdentifier>{35C03250-A14B-A014-AA5C-23091667FC14}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Kraken.h" />
-    <ClInclude Include="src\Kraken\Application.h">
-      <Filter>Kraken</Filter>
+    <ClInclude Include="src\Kraken\Core\Application.h">
+      <Filter>Kraken\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Kraken\Core.h">
-      <Filter>Kraken</Filter>
+    <ClInclude Include="src\Kraken\Core\Base.h">
+      <Filter>Kraken\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Kraken\EntryPoint.h">
-      <Filter>Kraken</Filter>
+    <ClInclude Include="src\Kraken\Core\EntryPoint.h">
+      <Filter>Kraken\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Core\Log.h">
+      <Filter>Kraken\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Core\Window.h">
+      <Filter>Kraken\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Kraken\Events\ApplicationEvent.h">
       <Filter>Kraken\Events</Filter>
@@ -34,17 +46,20 @@
     <ClInclude Include="src\Kraken\Events\WindowEvent.h">
       <Filter>Kraken\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\Kraken\Log.h">
-      <Filter>Kraken</Filter>
+    <ClInclude Include="src\Kraken\Platform\WinWindow.h">
+      <Filter>Kraken\Platform</Filter>
     </ClInclude>
     <ClInclude Include="src\krpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Kraken\Application.cpp">
-      <Filter>Kraken</Filter>
+    <ClCompile Include="src\Kraken\Core\Application.cpp">
+      <Filter>Kraken\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Kraken\Log.cpp">
-      <Filter>Kraken</Filter>
+    <ClCompile Include="src\Kraken\Core\Log.cpp">
+      <Filter>Kraken\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Kraken\Platform\WinWindow.cpp">
+      <Filter>Kraken\Platform</Filter>
     </ClCompile>
     <ClCompile Include="src\krpch.cpp" />
   </ItemGroup>

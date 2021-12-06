@@ -2,13 +2,7 @@
 #pragma once
 
 // For use by Kraken Applications
-#include "Kraken/Application.h"
-
-// ------- LOGGING -----------
-#include "Kraken/Log.h"
-// --------------------------
-
-// ------- ENTRY POINT -------
-#include "Kraken/EntryPoint.h"
-// ---------------------------
+#include "Kraken/Core/Application.h"	// Application definintion
+#include "Kraken/Core/Log.h"			// Logging
+#include "Kraken/Core/EntryPoint.h"		// Application Entry Point
 

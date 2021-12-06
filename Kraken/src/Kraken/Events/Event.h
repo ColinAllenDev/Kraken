@@ -3,8 +3,8 @@
  */
 
 #pragma once
-
-#include "Kraken/Core.h"
+#include "krpch.h"
+#include "Kraken/Core/Base.h"
 
 namespace Kraken {
 

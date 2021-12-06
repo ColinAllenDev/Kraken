@@ -1,7 +1,7 @@
 /** Kraken::Log - Logging class. Defines loggers for Core and Client as well as expose logging macros using spdlog library. **/
 
 #pragma once
-#include "Core.h"
+#include "Base.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
 

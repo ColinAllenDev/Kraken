@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>krpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>KR_PLATFORM_WINDOWS;KR_BUILD_DLL;KR_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -89,6 +89,8 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;GLFW.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\GLFW\bin\Debug-windows-x86_64\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\bin\Debug-windows-x86_64\Kraken\Kraken.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -101,7 +103,7 @@
       <PrecompiledHeaderFile>krpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>KR_PLATFORM_WINDOWS;KR_BUILD_DLL;KR_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -114,6 +116,8 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;GLFW.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\GLFW\bin\Debug-windows-x86_64\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\bin\Release-windows-x86_64\Kraken\Kraken.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -126,7 +130,7 @@
       <PrecompiledHeaderFile>krpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>KR_PLATFORM_WINDOWS;KR_BUILD_DLL;KR_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -139,6 +143,8 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;GLFW.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\GLFW\bin\Debug-windows-x86_64\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\bin\Dist-windows-x86_64\Kraken\Kraken.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -147,23 +153,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Kraken.h" />
-    <ClInclude Include="src\Kraken\Application.h" />
-    <ClInclude Include="src\Kraken\Core.h" />
-    <ClInclude Include="src\Kraken\EntryPoint.h" />
+    <ClInclude Include="src\Kraken\Core\Application.h" />
+    <ClInclude Include="src\Kraken\Core\Base.h" />
+    <ClInclude Include="src\Kraken\Core\EntryPoint.h" />
+    <ClInclude Include="src\Kraken\Core\Log.h" />
+    <ClInclude Include="src\Kraken\Core\Window.h" />
     <ClInclude Include="src\Kraken\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Kraken\Events\Event.h" />
     <ClInclude Include="src\Kraken\Events\KeyEvent.h" />
     <ClInclude Include="src\Kraken\Events\MouseEvent.h" />
     <ClInclude Include="src\Kraken\Events\WindowEvent.h" />
-    <ClInclude Include="src\Kraken\Log.h" />
+    <ClInclude Include="src\Kraken\Platform\WinWindow.h" />
     <ClInclude Include="src\krpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Kraken\Application.cpp" />
-    <ClCompile Include="src\Kraken\Log.cpp" />
+    <ClCompile Include="src\Kraken\Core\Application.cpp" />
+    <ClCompile Include="src\Kraken\Core\Log.cpp" />
+    <ClCompile Include="src\Kraken\Platform\WinWindow.cpp" />
     <ClCompile Include="src\krpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

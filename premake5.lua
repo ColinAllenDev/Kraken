@@ -10,6 +10,12 @@ workspace "Kraken"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}" -- "Debug-Windows-x64"
 
+-- Include directories relative to root (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Kraken/vendor/GLFW/include"
+
+include "Kraken/vendor/GLFW"
+
 project "Kraken"
     location "Kraken" -- Engine subfolder
     kind "SharedLib" -- Dynamic Library
@@ -28,7 +34,13 @@ project "Kraken"
     
     includedirs {
 	    "%{prj.name}/src",    
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}"
+    }
+
+    links {
+        "GLFW",
+        "opengl32.lib"
     }
 
     filter "system:windows" -- WINDOWS
