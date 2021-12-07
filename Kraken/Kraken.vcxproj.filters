@@ -49,7 +49,7 @@
     <ClInclude Include="src\Kraken\Platform\WinWindow.h">
       <Filter>Kraken\Platform</Filter>
     </ClInclude>
-    <ClInclude Include="src\krpch.h" />
+    <ClInclude Include="src\kepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Kraken\Core\Application.cpp">
@@ -61,6 +61,6 @@
     <ClCompile Include="src\Kraken\Platform\WinWindow.cpp">
       <Filter>Kraken\Platform</Filter>
     </ClCompile>
-    <ClCompile Include="src\krpch.cpp" />
+    <ClCompile Include="src\kepch.cpp" />
   </ItemGroup>
 </Project>

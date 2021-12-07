@@ -15,7 +15,7 @@
 
 #include "Kraken/Core/Log.h"
 
-#ifdef KR_PLATFORM_WINDOWS
+#ifdef KE_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
 

@@ -24,8 +24,8 @@ project "Kraken"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("int/" .. outputdir .. "/%{prj.name}")
 
-    pchheader "krpch.h"
-    pchsource "Kraken/src/krpch.cpp"
+    pchheader "kepch.h"
+    pchsource "Kraken/src/kepch.cpp"
 
     files {
         "%{prj.name}/src/**.h",
@@ -49,8 +49,8 @@ project "Kraken"
         systemversion "latest" -- Windows SDK
 
         defines {
-            "KR_PLATFORM_WINDOWS",
-            "KR_BUILD_DLL"
+            "KE_PLATFORM_WINDOWS",
+            "KE_BUILD_DLL"
         }
 
         postbuildcommands { -- Copy Kraken.dll to Sandbox enviornment
@@ -58,15 +58,15 @@ project "Kraken"
         }
     
     filter "configurations:Debug"
-        defines "KR_DEBUG"
+        defines "KE_DEBUG"
         symbols "On"
 
     filter "configurations:Release"
-        defines "KR_RELEASE"
+        defines "KE_RELEASE"
         optimize "On"
 
     filter "configurations:Dist"
-        defines "KR_DIST"
+        defines "KE_DIST"
         optimize "On"
 
 project "Sandbox"
@@ -97,17 +97,17 @@ project "Sandbox"
         systemversion "latest" -- Windows SDK
 
     defines {
-        "KR_PLATFORM_WINDOWS"
+        "KE_PLATFORM_WINDOWS"
     }
 
     filter "configurations:Debug"
-        defines "KR_DEBUG"
+        defines "KE_DEBUG"
         symbols "On"
 
     filter "configurations:Release"
-        defines "KR_RELEASE"
+        defines "KE_RELEASE"
         optimize "On"
 
     filter "configurations:Dist"
-        defines "KR_DIST"
+        defines "KE_DIST"
         optimize "On"

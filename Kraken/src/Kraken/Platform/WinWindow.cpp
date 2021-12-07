@@ -1,4 +1,4 @@
-#include "krpch.h"
+#include "kepch.h"
 #include "WinWindow.h"
 
 namespace Kraken {
@@ -21,14 +21,14 @@ namespace Kraken {
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
 
-		KR_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
+		KE_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
 		// Initialize GLFW if it hasn't been already
 		if (!s_GLFWInitialized) {
 			// TODO: glfwTerminate on system shutdown
 			int success = glfwInit();
 			// Check if glfw was initialized succesfully, otherwise break
-			KR_CORE_ASSERT(success, "Could not initialize GLFW!");
+			KE_CORE_ASSERT(success, "Could not initialize GLFW!");
 
 			s_GLFWInitialized = true;
 		}
