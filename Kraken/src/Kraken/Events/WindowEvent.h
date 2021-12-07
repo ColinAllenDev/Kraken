@@ -53,6 +53,8 @@ namespace Kraken {
 			return ss.str();
 		}
 
+		EVENT_CLASS_CATEGORY(EventCategoryWindow | EventCategoryApplication)
+		EVENT_CLASS_TYPE(WindowClose)
 	private:
 		bool m_Closed;
 	};

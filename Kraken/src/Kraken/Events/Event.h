@@ -68,6 +68,7 @@ namespace Kraken {
 		// Call dispatch function with EventFn
 		template<typename T>
 		bool Dispatch(EventFn<T> func) {
+			// Check if the type of incoming event = the static type of the template used in definition
 			if (m_Event.GetEventType() == T::GetStaticType()) {
 				// Sets m_Handled to output of m_Event and returns true
 				m_Event.m_Handled = func(*(T*)&m_Event);
