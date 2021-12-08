@@ -10,8 +10,17 @@
     <Filter Include="Kraken\Events">
       <UniqueIdentifier>{85C395F7-F183-112E-BABE-5AAB263E560A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Kraken\ImGui">
+      <UniqueIdentifier>{AB9CC307-97FF-52AC-4085-8B622CC71E2F}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Kraken\Platform">
       <UniqueIdentifier>{35C03250-A14B-A014-AA5C-23091667FC14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kraken\Platform\OpenGL">
+      <UniqueIdentifier>{C97B980F-B575-C161-9EE2-57728A7B27CE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kraken\Platform\Windows">
+      <UniqueIdentifier>{6FCFC35A-DB06-0CF2-E410-701550C732EB}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -23,6 +32,12 @@
       <Filter>Kraken\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Kraken\Core\EntryPoint.h">
+      <Filter>Kraken\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Core\Layer.h">
+      <Filter>Kraken\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Core\LayerStack.h">
       <Filter>Kraken\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Kraken\Core\Log.h">
@@ -46,8 +61,14 @@
     <ClInclude Include="src\Kraken\Events\WindowEvent.h">
       <Filter>Kraken\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\Kraken\Platform\WinWindow.h">
-      <Filter>Kraken\Platform</Filter>
+    <ClInclude Include="src\Kraken\ImGui\ImGuiLayer.h">
+      <Filter>Kraken\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Kraken\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Platform\Windows\WinWindow.h">
+      <Filter>Kraken\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\kepch.h" />
   </ItemGroup>
@@ -55,11 +76,23 @@
     <ClCompile Include="src\Kraken\Core\Application.cpp">
       <Filter>Kraken\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Kraken\Core\Layer.cpp">
+      <Filter>Kraken\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Kraken\Core\LayerStack.cpp">
+      <Filter>Kraken\Core</Filter>
+    </ClCompile>
     <ClCompile Include="src\Kraken\Core\Log.cpp">
       <Filter>Kraken\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Kraken\Platform\WinWindow.cpp">
-      <Filter>Kraken\Platform</Filter>
+    <ClCompile Include="src\Kraken\ImGui\ImGuiLayer.cpp">
+      <Filter>Kraken\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Kraken\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Kraken\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Kraken\Platform\Windows\WinWindow.cpp">
+      <Filter>Kraken\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\kepch.cpp" />
   </ItemGroup>

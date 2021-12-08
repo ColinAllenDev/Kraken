@@ -1,4 +1,5 @@
-/* Kraken::Event - Core event handler class, defines event types and categories as well as functionality for receiving information about events as well as dispatching them.
+/* Kraken::Event - Core event handler class, defines event types and categories as well as 
+ * functionality for receiving information about events as well as dispatching them.
  * Currently uses 'blocking' events. Buffer events and event bus to be implemented in the future.
  */
 
@@ -16,7 +17,7 @@ namespace Kraken {
 		None = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTyped,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
@@ -48,6 +49,7 @@ namespace Kraken {
 		virtual int GetCategoryFlags() const = 0;
 		virtual std::string ToString() const { return GetName(); }
 
+		inline bool IsHandled() { return m_Handled; }
 		inline bool IsInCategory(EventCategory category) {
 			return GetCategoryFlags() & category;
 		}

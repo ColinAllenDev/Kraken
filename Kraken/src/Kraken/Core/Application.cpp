@@ -1,19 +1,28 @@
 #include "kepch.h"
 #include "Application.h"
 
-namespace Kraken {
+#include <glad/glad.h>
 
-#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+namespace Kraken {
+	Application* Application::s_Instance = nullptr;
 
 	Application::Application() {
+		KE_CORE_ASSERT(!s_Instance, "Application already exists!")
+		s_Instance = this;
+
 		m_Window = std::unique_ptr<Window>(Window::Create());
-		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+		m_Window->SetEventCallback(KE_BIND_EVENT_FN(Application::OnEvent));
 	}
 
 	Application::~Application() {}
 
 	void Application::Run() {
 		while (m_Running) {
+			//  Update all Layers on LayerStack
+			for (Layer* layer : m_LayerStack)
+				layer->OnUpdate();
+
+			// Update Window
 			m_Window->OnUpdate();
 		}
 	}
@@ -21,11 +30,26 @@ namespace Kraken {
 	void Application::OnEvent(Event& e) {
 		// Event dispatch handling
 		EventDispatcher dispatcher(e);
-		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClosed));
+		dispatcher.Dispatch<WindowCloseEvent>(KE_BIND_EVENT_FN(Application::OnWindowClosed));
 
+		// Traverse backwards through layer stack
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();) {
+			// Process layer event
+			(*--it)->OnEvent(e);
+			// If the event is handled, do not continue
+			if (e.IsHandled())
+				break;
+		}
+	}
 
-		// Here for debug purposes
-		KE_CORE_TRACE("{0}", e);
+	void Application::PushLayer(Layer* layer) {
+		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
+	}
+
+	void Application::PushOverlay(Layer* overlay) {
+		m_LayerStack.PushOverlay(overlay);
+		overlay->OnAttach();
 	}
 
 	bool Application::OnWindowClosed(WindowCloseEvent& e) {

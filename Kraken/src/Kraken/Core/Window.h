@@ -18,6 +18,10 @@ namespace Kraken {
 	/* The interface representing a desktop system based Window */
 	class KRAKEN_API Window {
 	public:
+		/**
+		* Alias for function object representing our callback function.
+		* @param Event& - Reference to our Event object.
+		*/
 		using EventCallbackFn = std::function<void(Event&)>;
 		
 		virtual ~Window() {}

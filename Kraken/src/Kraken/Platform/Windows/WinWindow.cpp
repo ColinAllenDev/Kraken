@@ -5,6 +5,8 @@
 #include "Kraken/Events/KeyEvent.h"
 #include "Kraken/Events/MouseEvent.h"
 
+#include <glad/glad.h>
+
 namespace Kraken {
 	static bool s_GLFWInitialized = false;
 
@@ -44,12 +46,19 @@ namespace Kraken {
 			s_GLFWInitialized = true;
 		}
 
+		// Make GLFW window context
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+
+		// Load OpenGL (GLAD)
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		KE_CORE_ASSERT(status, "Failed to initialize GLAD!");
+
+		// Window properties
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
-		// == Set GLFW Callbacks ==
+		/// ==== GLFW CALLBACKS ==== ///
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height) {
 			// Return GLFW window pointer as a WindowData pointer
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
@@ -88,6 +97,13 @@ namespace Kraken {
 					return;
 				}
 			}
+		});
+
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keycode) {
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+			
+			KeyTypedEvent event(keycode);
+			data.EventCallback(event);
 		});
 
 		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods) {
@@ -129,8 +145,10 @@ namespace Kraken {
 
 	// Main window update loop
 	void WinWindow::OnUpdate() {
-		glfwPollEvents();
+		// Swap front/back buffers
 		glfwSwapBuffers(m_Window);
+		// Proccess event callbacks
+		glfwPollEvents();
 	}
 
 	void WinWindow::SetVSync(bool enabled) {

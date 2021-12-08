@@ -2,6 +2,7 @@
 
 #pragma once
 #include "Base.h"
+#include "Kraken/Core/LayerStack.h"
 #include "Kraken/Events/Event.h"
 #include "Kraken/Core/Window.h"
 #include "Kraken/Core/Log.h"
@@ -15,17 +16,45 @@ namespace Kraken {
 		Application();
 		virtual ~Application();
 
+		/**
+	     * Main engine loop. Updates all layers on the LayerStack
+		 * as well as any Windows. 
+		 */
 		void Run();
 
+		/**
+		 * Proccess events as they arrive. 
+		 * @param e - Reference to the Event object.
+		 */
 		void OnEvent(Event& e);
+
+		/**
+		 * Push Layer to end of LayerStack.
+		 * @param layer - Pointer to Layer object.
+		 */
+		void PushLayer(Layer* layer);
+		
+		/**
+		* Push Overlay to front of LayerStack.
+		* @param overlay - Pointer to Layer object.
+		*/
+		void PushOverlay(Layer* overlay);
+
+		/// Returns the Application's window object
+		inline Window& GetWindow() { return *m_Window; }
+		/// Returns this instance of the Application
+		inline static Application& Get() { return *s_Instance; }
 	private:
+		bool m_Running = true;
 		bool OnWindowClosed(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
-		bool m_Running = true;
+		LayerStack m_LayerStack;
+	private:
+		static Application* s_Instance;
 	};
 
-	// To be defined in CLIENT
+	// To be defined in client application
 	Application* CreateApplication();
 }
 
