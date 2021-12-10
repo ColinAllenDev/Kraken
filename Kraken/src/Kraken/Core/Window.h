@@ -35,6 +35,15 @@ namespace Kraken {
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
 
+		/**
+		 * @return native window library (e.g. GLFW) context
+		 */
+		virtual void* GetNativeWindow() const = 0;
+
+		/**
+		 * Static method to create a Window from outside the window class.
+		 * @return pointer to Window instance
+		 */
 		static Window* Create(const WindowProps& props = WindowProps());
 	};
 }

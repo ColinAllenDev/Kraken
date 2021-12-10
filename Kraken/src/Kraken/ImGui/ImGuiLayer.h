@@ -1,5 +1,5 @@
+/*
 #pragma once
-
 #include "Kraken/Core/Layer.h"
 #include "Kraken/Events/MouseEvent.h"
 #include "Kraken/Events/KeyEvent.h"
@@ -29,3 +29,4 @@ namespace Kraken {
 		float m_Time = 0.0f;
 	};
 }
+*/

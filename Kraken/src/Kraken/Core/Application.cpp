@@ -1,5 +1,6 @@
 #include "kepch.h"
 #include "Application.h"
+#include "Input.h"
 
 #include <glad/glad.h>
 
@@ -7,9 +8,11 @@ namespace Kraken {
 	Application* Application::s_Instance = nullptr;
 
 	Application::Application() {
+		// Create application singleton
 		KE_CORE_ASSERT(!s_Instance, "Application already exists!")
 		s_Instance = this;
-
+		
+		// Create window
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(KE_BIND_EVENT_FN(Application::OnEvent));
 	}

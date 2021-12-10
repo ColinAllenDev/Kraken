@@ -5,19 +5,20 @@ public:
 	ExampleLayer() : Layer("Example") {}
 
 	void OnUpdate() override {
-		KE_INFO("ExampleLayer::Update");
+		if (Kraken::Input::IsKeyPressed(KE_KEY_TAB))
+			KE_TRACE("Tab key is pressed!");
 	}
 
 	void OnEvent(Kraken::Event& event) override {
-		KE_TRACE("{0}", event);
+		// KE_TRACE("{0}", event);
 	}
 };
 
 class Sandbox : public Kraken::Application {
 public:
 	Sandbox() {
-		//PushLayer(new ExampleLayer());
-		PushOverlay(new Kraken::ImGuiLayer());
+		PushLayer(new ExampleLayer());
+		//PushOverlay(new Kraken::ImGuiLayer());
 	}
 
 	~Sandbox() {}

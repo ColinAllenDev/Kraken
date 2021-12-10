@@ -40,9 +40,14 @@ namespace Kraken {
 		*/
 		void PushOverlay(Layer* overlay);
 
-		/// Returns the Application's window object
+		/**
+		 * @return reference to the Window object.
+		 */
 		inline Window& GetWindow() { return *m_Window; }
-		/// Returns this instance of the Application
+		
+		/**
+		 * @return reference to the Application instance.
+		 */
 		inline static Application& Get() { return *s_Instance; }
 	private:
 		bool m_Running = true;

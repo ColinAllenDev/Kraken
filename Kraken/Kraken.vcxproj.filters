@@ -34,6 +34,12 @@
     <ClInclude Include="src\Kraken\Core\EntryPoint.h">
       <Filter>Kraken\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Kraken\Core\Input.h">
+      <Filter>Kraken\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Core\KeyCodes.h">
+      <Filter>Kraken\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Kraken\Core\Layer.h">
       <Filter>Kraken\Core</Filter>
     </ClInclude>
@@ -41,6 +47,9 @@
       <Filter>Kraken\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Kraken\Core\Log.h">
+      <Filter>Kraken\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Core\MouseCodes.h">
       <Filter>Kraken\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Kraken\Core\Window.h">
@@ -64,10 +73,10 @@
     <ClInclude Include="src\Kraken\ImGui\ImGuiLayer.h">
       <Filter>Kraken\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\Kraken\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>Kraken\Platform\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="src\Kraken\Platform\Windows\WinWindow.h">
+      <Filter>Kraken\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kraken\Platform\Windows\WindowsInput.h">
       <Filter>Kraken\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\kepch.h" />
@@ -88,12 +97,13 @@
     <ClCompile Include="src\Kraken\ImGui\ImGuiLayer.cpp">
       <Filter>Kraken\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Kraken\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>Kraken\Platform\OpenGL</Filter>
-    </ClCompile>
     <ClCompile Include="src\Kraken\Platform\Windows\WinWindow.cpp">
       <Filter>Kraken\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\Kraken\Platform\Windows\WindowsInput.cpp">
+      <Filter>Kraken\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\kepch.cpp" />
+    <ClCompile Include="src\Kraken\ImGui\ImGuiBuild.cpp" />
   </ItemGroup>
 </Project>

@@ -15,6 +15,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Kraken/vendor/GLFW/include"
 IncludeDir["glad"] = "Kraken/vendor/glad/include"
 IncludeDir["ImGui"] = "Kraken/vendor/imgui/"
+IncludeDir["glm"] = "Kraken/vendor/glm"
 
 include "Kraken/vendor/GLFW"
 include "Kraken/vendor/glad"
@@ -41,7 +42,8 @@ project "Kraken"
         "%{prj.name}/vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.glad}",
-        "%{IncludeDir.ImGui}"
+        "%{IncludeDir.ImGui}",
+        "%{IncludeDir.glm}"
     }
 
     links {
@@ -63,7 +65,7 @@ project "Kraken"
         }
 
         postbuildcommands { -- Copy Kraken.dll to Sandbox enviornment
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+            ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
         }
     
     filter "configurations:Debug"
@@ -96,7 +98,8 @@ project "Sandbox"
 
     includedirs {
         "Kraken/src",    
-        "Kraken/vendor/spdlog/include"
+        "Kraken/vendor/spdlog/include",
+        "%{IncludeDir.glm}"
     }
 
     links {

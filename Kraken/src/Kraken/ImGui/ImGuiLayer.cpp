@@ -1,9 +1,11 @@
 #include "kepch.h"
+/*
+#include "kepch.h"
 #include "ImGuiLayer.h"
 
-#include <imgui.h>
+//#include <imgui.h>
 #include "Kraken/Core/Application.h"
-#include "Kraken/Platform/OpenGL/ImGuiOpenGLRenderer.h"
+//#include "Kraken/Platform/OpenGL/ImGuiOpenGLRenderer.h"
 #include <GLFW/glfw3.h> // Temporary
 #include <glad/glad.h> // Temporary
 
@@ -152,3 +154,4 @@ namespace Kraken {
         return false;
     }
 }
+*/
