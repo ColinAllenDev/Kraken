@@ -7,3 +7,6 @@
 [submodule "Kraken/vendor/imgui"]
 	path = Kraken/vendor/imgui
 	url = https://github.com/ColinAllenDev/imgui
+[submodule "Kraken/vendor/glm"]
+	path = Kraken/vendor/glm
+	url = https://github.com/g-truc/glm
