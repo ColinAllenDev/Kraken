@@ -1,11 +1,12 @@
 #include "kepch.h"
+
+#include <glad/glad.h>
+
 #include "WinWindow.h"
 
 #include "Kraken/Events/WindowEvent.h"
 #include "Kraken/Events/KeyEvent.h"
 #include "Kraken/Events/MouseEvent.h"
-
-#include <glad/glad.h>
 
 namespace Kraken {
 	static bool s_GLFWInitialized = false;

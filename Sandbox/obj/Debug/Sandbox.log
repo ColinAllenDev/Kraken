@@ -1,6 +1,0 @@
-﻿  SandboxApp.cpp
-C:\Projects\Software\Kraken\Kraken\src\Kraken\Log.h(16,42): warning C4251: 'Kraken::Log::s_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Kraken::Log'
-C:\Projects\Software\Kraken\Kraken\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
-C:\Projects\Software\Kraken\Kraken\src\Kraken\Log.h(17,42): warning C4251: 'Kraken::Log::s_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Kraken::Log'
-C:\Projects\Software\Kraken\Kraken\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
-  Sandbox.vcxproj -> C:\Projects\Software\Kraken\int\Debug-windows-x86_64\Sandbox\Sandbox.exe

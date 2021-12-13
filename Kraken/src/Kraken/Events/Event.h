@@ -34,9 +34,9 @@ namespace Kraken {
 	};
 
 	// Implements EventType information using single macro rather than implementing name, non-member type, and virtual override 'getter'.
-	#define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\
-								   virtual EventType GetEventType() const override { return GetStaticType(); }\
-								   virtual const char* GetName() const override { return #type; }
+	#define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::type; }\
+								   									virtual EventType GetEventType() const override { return GetStaticType(); }\
+								   									virtual const char* GetName() const override { return #type; }
 	
 	// Implements EventCategoryType information using single macro.
 	#define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }

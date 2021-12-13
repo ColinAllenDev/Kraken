@@ -9,6 +9,8 @@
 #include "Kraken/Events/ApplicationEvent.h"
 #include "Kraken/Events/WindowEvent.h"
 
+#include "Kraken/ImGui/ImGuiLayer.h"
+
 namespace Kraken {
 
 	class KRAKEN_API Application {
@@ -52,6 +54,8 @@ namespace Kraken {
 	private:
 		bool m_Running = true;
 		bool OnWindowClosed(WindowCloseEvent& e);
+
+		ImGuiLayer* m_ImGuiLayer;
 
 		std::unique_ptr<Window> m_Window;
 		LayerStack m_LayerStack;
