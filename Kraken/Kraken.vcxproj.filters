@@ -16,9 +16,6 @@
     <Filter Include="Kraken\Platform">
       <UniqueIdentifier>{35C03250-A14B-A014-AA5C-23091667FC14}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Kraken\Platform\OpenGL">
-      <UniqueIdentifier>{C97B980F-B575-C161-9EE2-57728A7B27CE}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Kraken\Platform\Windows">
       <UniqueIdentifier>{6FCFC35A-DB06-0CF2-E410-701550C732EB}</UniqueIdentifier>
     </Filter>
@@ -94,6 +91,9 @@
     <ClCompile Include="src\Kraken\Core\Log.cpp">
       <Filter>Kraken\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Kraken\ImGui\ImGuiBuild.cpp">
+      <Filter>Kraken\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Kraken\ImGui\ImGuiLayer.cpp">
       <Filter>Kraken\ImGui</Filter>
     </ClCompile>
@@ -104,6 +104,5 @@
       <Filter>Kraken\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\kepch.cpp" />
-    <ClCompile Include="src\Kraken\ImGui\ImGuiBuild.cpp" />
   </ItemGroup>
 </Project>
