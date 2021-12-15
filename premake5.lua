@@ -129,7 +129,7 @@ project "Kraken"
         runtime "Debug"
         symbols "On"
     filter {"system:windows", "configurations:Debug"}
-        buildoptions "/MD"   
+        buildoptions "/MDd"   
 
     filter "configurations:Release"
         defines "KE_RELEASE"
