@@ -4,6 +4,7 @@
 [submodule "Kraken/vendor/GLFW"]
 	path = Kraken/vendor/GLFW
 	url = https://github.com/ColinAllenDev/glfw
+	branch = 3.3-stable
 [submodule "Kraken/vendor/imgui"]
 	path = Kraken/vendor/imgui
 	url = https://github.com/ColinAllenDev/imgui
