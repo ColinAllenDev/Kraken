@@ -3,19 +3,27 @@
 
 #if defined KE_PLATFORM_WINDOWS
 	#define KE_DEBUG_BREAK { __debugbreak(); }
+#ifdef KE_DYNAMIC_LINK	
 	#ifdef KE_BUILD_DLL
 		#define KRAKEN_API __declspec(dllexport)
 	#else 
 		#define KRAKEN_API __declspec(dllimport)
 	#endif
+#else
+	#define KRAKEN_API
+#endif
 #elif defined KE_PLATFORM_LINUX
 	#include <signal.h>
 	#define KE_DEBUG_BREAK { raise(SIGTRAP); }
+#ifdef KE_DYNAMIC_LINK
 	#ifdef KE_BUILD_DLL
 		#define KRAKEN_API __attribute__((visibility("default")))
 	#else
 		#define KRAKEN_API
 	#endif
+#else
+	#define KRAKEN_API
+#endif
 #else
 	#error Unsupported Platform!
 #endif

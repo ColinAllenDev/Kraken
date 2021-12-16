@@ -55,9 +55,8 @@ namespace Kraken {
 		bool m_Running = true;
 		bool OnWindowClosed(WindowCloseEvent& e);
 
-		ImGuiLayer* m_ImGuiLayer;
-
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		LayerStack m_LayerStack;
 	private:
 		static Application* s_Instance;

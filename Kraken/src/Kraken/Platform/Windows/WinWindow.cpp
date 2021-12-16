@@ -67,7 +67,7 @@ namespace Kraken {
 			data.Height = height;
 
 			// Create and dispatch event
-			WindowResizeEvent event(width, height);
+			WindowResizeEvent event((float)width, (float)height);
 			data.EventCallback(event);
 		});
 
@@ -134,7 +134,7 @@ namespace Kraken {
 		glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double xPos, double yPos) {
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
-			MouseMovedEvent event(xPos, yPos);
+			MouseMovedEvent event((float)xPos, (float)yPos);
 			data.EventCallback(event);
 		});
 

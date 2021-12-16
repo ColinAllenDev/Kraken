@@ -26,7 +26,9 @@ project "Kraken"
     location "Kraken" -- Engine subfolder
     kind "StaticLib" -- Static Library
     language "C++"
-    staticruntime "off"
+    cppdialect "C++17"
+    staticruntime "on"
+    systemversion "latest"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("int/" .. outputdir .. "/%{prj.name}")
@@ -58,11 +60,11 @@ project "Kraken"
         "imgui"
     }
 
-    filter "system:windows" -- WINDOWS
-        cppdialect "C++17"
-        staticruntime "On" -- Link runtime libraries statically
-        systemversion "latest" -- Windows SDK
+    defines {
+        "_CRT_SECURE_NO_WARNINGS"
+    }
 
+    filter "system:windows" -- WINDOWS
         -- Windows specific platform files
         files {
             "%{prj.name}/src/Platform/Windows/**.h",
@@ -71,7 +73,6 @@ project "Kraken"
 
         defines {
             "KE_PLATFORM_WINDOWS",
-            "KE_PLATFORM_LINUX",
             "KE_BUILD_DLL"
         }
 
@@ -80,10 +81,7 @@ project "Kraken"
         }
     
     filter "system:linux" -- LINUX
-        pic "On"
-        cppdialect "C++17"
-        staticruntime "On"
-        systemversion "latest"
+        pic "On"   
 
         -- Linux specific platform files
         files {
@@ -106,6 +104,7 @@ project "Kraken"
             "KE_BUILD_DLL"
         }
 
+        -- 'premake5 clean' command in linux, cleans solution binaries
         newaction {
             trigger = "clean",
             description = "clean build",
@@ -113,9 +112,9 @@ project "Kraken"
                 print("Cleaning build...")
                 os.rmdir("./bin")
                 os.rmdir("./int")
-                os.rmdir("./Kraken/vendor/GLFW/bin")
+                os.rmdir("./Kraken/vendor/GLFW/bin") -- this method seems hacky, might change in future
                 os.rmdir("./Kraken/vendor/GLFW/int")
-                os.rmdir("./Kraken/vendor/imgui/bin") -- this method seems hacky, might change in future
+                os.rmdir("./Kraken/vendor/imgui/bin") 
                 os.rmdir("./Kraken/vendor/imgui/int")
                 os.rmdir("./Kraken/vendor/glad/bin")
                 os.rmdir("./Kraken/vendor/glad/int")
@@ -127,21 +126,21 @@ project "Kraken"
     filter "configurations:Debug"
         defines "KE_DEBUG"
         runtime "Debug"
-        symbols "On"
+        symbols "on"
     filter {"system:windows", "configurations:Debug"}
-        buildoptions "/MDd"   
+        buildoptions "/MTd"   
 
     filter "configurations:Release"
         defines "KE_RELEASE"
         runtime "Release"
-        optimize "On"
+        optimize "on"
     filter {"system:windows", "configurations:Release"}
         buildoptions "/MD"    
 
     filter "configurations:Dist"
         defines "KE_DIST"
         runtime "Release"
-        optimize "On"
+        optimize "on"
     filter {"system:windows", "configurations:Dist"}
         buildoptions "/MD"   
 
@@ -150,7 +149,10 @@ project "Sandbox"
     location "Sandbox" -- Sandbox subfolder
     kind "ConsoleApp"
     language "C++"
+    cppdialect "C++17"
     staticruntime "on"
+    systemversion "latest"
+
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("int/" .. outputdir .. "/%{prj.name}")
@@ -172,19 +174,12 @@ project "Sandbox"
         "Kraken"
     }
 
-    filter "system:windows" -- WINDOWS
-        cppdialect "C++17"
-        staticruntime "On" -- Link runtime libraries statically
-        systemversion "latest" -- Windows SDK
-
+    filter "system:windows" -- WINDOWS        
         defines {
             "KE_PLATFORM_WINDOWS"
         }
 
     filter "system:linux" -- LINUX
-        cppdialect "C++17"
-        staticruntime "On"
-        systemversion "latest"
         pic "On"
         
         links {
@@ -208,18 +203,18 @@ project "Sandbox"
     filter "configurations:Debug"
         defines "KE_DEBUG"
         runtime "Debug"
-        symbols "On"
+        symbols "on"
     filter { "system:windows", "configurations:Debug" }
-        buildoptions "/MDd"
+        buildoptions "/MTd"
 
     filter "configurations:Release"
         defines "KE_RELEASE"
         runtime "Release"
-        optimize "On"
+        optimize "on"
     filter { "system:windows", "configurations:Release" }
         buildoptions "/MD"
 
     filter "configurations:Dist"
         defines "KE_DIST"
         runtime "Release"
-        optimize "On"
+        optimize "on"
