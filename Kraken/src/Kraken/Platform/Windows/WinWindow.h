@@ -2,6 +2,8 @@
 #pragma once
 
 #include "Kraken/Core/Window.h"
+#include "Kraken/Platform/OpenGL/OpenGLContext.h"
+
 #include <GLFW/glfw3.h>
 
 namespace Kraken {
@@ -25,6 +27,8 @@ namespace Kraken {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		RenderContext* m_Context;
+
 		struct WindowData {
 			std::string Title;
 			unsigned int Width, Height;

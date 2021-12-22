@@ -11,5 +11,8 @@
 #include "Kraken/Core/KeyCodes.h"		// Keyboard Input Codes
 #include "Kraken/Core/MouseCodes.h"		// Mouse Button Codes
 
-#include "Kraken/ImGui/ImGuiLayer.h"	// ImGui Layer (temporary)
+#include "Kraken/ImGui/ImGuiLayer.h"	// ImGUI Layer
+
+/* --------- Renderer ------------- */
+#include "Kraken/Renderer/Renderer.h"	// Core Renderer
 

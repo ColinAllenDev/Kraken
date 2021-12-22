@@ -6,9 +6,7 @@ public:
 	ExampleLayer() : Layer("Example") {}
 
 	void OnImGuiRender() override {
-		ImGui::Begin("Sandbox Test"); // Begin rendering
-		ImGui::Text("Hello World from Client!");
-		ImGui::End(); // End Rendering
+		
 	}
 };
 

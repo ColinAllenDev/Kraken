@@ -160,9 +160,21 @@
     <ClInclude Include="src\Kraken\Events\MouseEvent.h" />
     <ClInclude Include="src\Kraken\Events\WindowEvent.h" />
     <ClInclude Include="src\Kraken\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Kraken\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\Kraken\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Kraken\Platform\OpenGL\OpenGLRenderAPI.h" />
+    <ClInclude Include="src\Kraken\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Kraken\Platform\Windows\WinWindow.h" />
     <ClInclude Include="src\Kraken\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\kepch.h" />
+    <ClInclude Include="src\Kraken\Renderer\Buffer.h" />
+    <ClInclude Include="src\Kraken\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\Kraken\Renderer\RenderContext.h" />
+    <ClInclude Include="src\Kraken\Renderer\Renderer.h" />
+    <ClInclude Include="src\Kraken\Renderer\RenderAPI.h" />
+    <ClInclude Include="src\Kraken\Renderer\Shader.h" />
+    <ClInclude Include="src\Kraken\Renderer\ShaderData.h" />
+    <ClInclude Include="src\Kraken\Renderer\VertexArray.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Kraken\Core\Application.cpp" />
@@ -171,11 +183,22 @@
     <ClCompile Include="src\Kraken\Core\Log.cpp" />
     <ClCompile Include="src\Kraken\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Kraken\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\Kraken\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Kraken\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Kraken\Platform\OpenGL\OpenGLRenderAPI.cpp" />
+    <ClCompile Include="src\Kraken\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Kraken\Platform\Windows\WinWindow.cpp" />
     <ClCompile Include="src\Kraken\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\kepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Kraken\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Kraken\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="src\Kraken\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Kraken\Renderer\RenderAPI.cpp" />
+    <ClCompile Include="src\Kraken\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Kraken\Renderer\ShaderData.cpp" />
+    <ClCompile Include="src\Kraken\Renderer\VertexArray.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

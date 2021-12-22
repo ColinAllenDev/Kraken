@@ -77,6 +77,18 @@
       <Filter>Kraken\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\kepch.h" />
+    <ClInclude Include="src\Kraken\Renderer\RenderContext.h" />
+    <ClInclude Include="src\Kraken\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Kraken\Renderer\Shader.h" />
+    <ClInclude Include="src\Kraken\Renderer\Buffer.h" />
+    <ClInclude Include="src\Kraken\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\Kraken\Renderer\Renderer.h" />
+    <ClInclude Include="src\Kraken\Renderer\ShaderData.h" />
+    <ClInclude Include="src\Kraken\Renderer\VertexArray.h" />
+    <ClInclude Include="src\Kraken\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\Kraken\Renderer\RenderAPI.h" />
+    <ClInclude Include="src\Kraken\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\Kraken\Platform\OpenGL\OpenGLRenderAPI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Kraken\Core\Application.cpp">
@@ -104,5 +116,16 @@
       <Filter>Kraken\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\kepch.cpp" />
+    <ClCompile Include="src\Kraken\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Kraken\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Kraken\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Kraken\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Kraken\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Kraken\Renderer\ShaderData.cpp" />
+    <ClCompile Include="src\Kraken\Renderer\VertexArray.cpp" />
+    <ClCompile Include="src\Kraken\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\Kraken\Renderer\RenderAPI.cpp" />
+    <ClCompile Include="src\Kraken\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="src\Kraken\Platform\OpenGL\OpenGLRenderAPI.cpp" />
   </ItemGroup>
 </Project>

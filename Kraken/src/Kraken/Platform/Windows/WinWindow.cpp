@@ -1,12 +1,11 @@
 #include "kepch.h"
 
-#include <glad/glad.h>
-
 #include "WinWindow.h"
 
 #include "Kraken/Events/WindowEvent.h"
 #include "Kraken/Events/KeyEvent.h"
 #include "Kraken/Events/MouseEvent.h"
+#include "Kraken/Platform/OpenGL/OpenGLContext.h"
 
 namespace Kraken {
 	static bool s_GLFWInitialized = false;
@@ -32,7 +31,9 @@ namespace Kraken {
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
 
-		KE_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
+		//KE_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
+		
+		
 
 		// Initialize GLFW if it hasn't been already
 		if (!s_GLFWInitialized) {
@@ -49,12 +50,9 @@ namespace Kraken {
 
 		// Make GLFW window context
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
-
-		// Load OpenGL (GLAD)
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		KE_CORE_ASSERT(status, "Failed to initialize GLAD!");
-
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->Init();
+		
 		// Window properties
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
@@ -146,10 +144,10 @@ namespace Kraken {
 
 	// Main window update loop
 	void WinWindow::OnUpdate() {
-		// Swap front/back buffers
-		glfwSwapBuffers(m_Window);
 		// Proccess event callbacks
 		glfwPollEvents();
+		// Swap front/back buffers
+		m_Context->SwapBuffers();
 	}
 
 	void WinWindow::SetVSync(bool enabled) {
