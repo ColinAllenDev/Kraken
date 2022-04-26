@@ -1,5 +1,5 @@
 # Kraken
-Kraken Game Engine
+Kraken is a game engine written in C++ with support for OpenGL, Vulkan, and DirectX apis. It currently contains a logging system, render architecture, GUI frontend, and cross-platform compatibility.
 
 ## Setup
 First clone the repository with `git clone --recursive <URL>`
